@@ -8,11 +8,12 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="index.php" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+              <!-- <a href="index.php" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a> -->
+              <a href="index.php" class="<?=uriIs('/laravel_with_laracast/php_for_beginners/dynamicWEbApplication/mvc-structure/index.php')? 'bg-gray-900 text-white':'text-gray-300';?> px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
-              <a href="about.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
+              <a href="about.php" class="<?=uriIs('/laravel_with_laracast/php_for_beginners/dynamicWEbApplication/mvc-structure/about.php')?'bg-gray-900 text-white':'text-gray-300';?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About us</a>
 
-              <a href="contact.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact us</a>
+              <a href="contact.php" class="<?=uriIs('/laravel_with_laracast/php_for_beginners/dynamicWEbApplication/mvc-structure/contact.php') ?'bg-gray-900 text-white':'text-gray-300';?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact us</a>
             </div>
           </div>
         </div>
