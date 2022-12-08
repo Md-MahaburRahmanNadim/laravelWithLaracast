@@ -35,8 +35,22 @@ $statement = $pdo->prepare('select * from posts'); // this prepare a query to be
 $statement->execute(); // this execute the query in the database
 // fetch all the data from the database as a associative array
 $posts = $statement->fetchAll(PDO::FETCH_ASSOC); // this fetch all the data from the database as a associative array
+// this create a two dimensional array and reture all the rows
 // dd($posts);
 foreach ($posts as $post) {
     // print_r($post);
     echo '<li>' . $post['title'] . '</li>';
+}
+
+/*
+excersize 
+Create a prepared statement to fetch the post that has an id of 1. Then, experiment with calling fetch() instead of fetchAll(). How is the output different?*/
+$excersize = $pdo->prepare('select * from posts where id = 1');
+$excersize->execute();
+$excersize = $excersize->fetch(PDO::FETCH_ASSOC);// this create a single array and reture the first row
+dd($excersize);
+
+foreach ($excersize as $ex) {
+    // print_r($post);
+    echo '<li>' .$ex . '</li>';
 }
