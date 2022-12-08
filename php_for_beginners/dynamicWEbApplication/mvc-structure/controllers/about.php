@@ -3,4 +3,4 @@
 require 'function.php';
 $header ='About us';
 // import about view
-require 'view/about.view.php';
+require 'views/about.view.php';

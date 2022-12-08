@@ -3,4 +3,4 @@
 //load the view of conatact page
 require 'function.php';
 $header = 'contact us now!';
-require 'view/contact.view.php';
+require 'views/contact.view.php';
