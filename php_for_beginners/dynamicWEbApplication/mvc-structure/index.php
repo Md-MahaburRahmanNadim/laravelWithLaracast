@@ -27,9 +27,19 @@ dd($person);
 */
 // connect to the database and excute a query to fetch all the data via pdo ,dns and Database class
 
+// let create a dynamic dns string to connect to the database
+// let's send it upword to make this more dynamic
+// $config = [
+//     'host' => 'localhost',
+//     'port' => '3306',
+//     'dbname' => 'myapp',
+//     'charset' => 'utf8mb4',
+// ];
+//  let's return this array from a config file
+$config = require 'config.php';
 // create a new database object
-$db = new Database();
-$posts = $db->quary('select * from posts')->fetch(PDO::FETCH_ASSOC); // this fetch all the data from the database as a associative array
+$db = new Database($config['database']);
+$posts = $db->quary('select * from posts')->fetch(); // this fetch all the data from the database as a associative array
 /*
 create a database class or extract a database class 
 

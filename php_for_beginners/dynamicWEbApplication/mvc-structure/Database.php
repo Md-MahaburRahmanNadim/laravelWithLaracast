@@ -3,10 +3,23 @@
 class Database
 {
     public $connection;
-    public function __construct()
+    public function __construct($config, $user = 'root', $password = '')
     {
-        $dns = 'mysql:host=localhost;port=3306;dbname=myapp;charset=utf8mb4;user=root;'; // this is the dns string to connect to the database
-        $this->connection = new PDO($dns); // this create a pdo connection to the database and store it in the connection property
+        // // let create a dynamic dns string to connect to the database
+        // $config = [
+        //     'host' => 'localhost',
+        //     'port' => '3306',
+        //     'dbname' => 'myapp',
+        //     'charset' => 'utf8mb4',
+        // ];
+        // $dns = 'mysql:host=localhost;port=3306;dbname=myapp;charset=utf8mb4;user=root;'; // this is the dns string to connect to the database
+        // $dns = 'mysql:host=' . $config['host'] . ';port=' . $config['port'] . ';dbname=' . $config['dbname'] . ';charset=' . $config['charset'] . ';user=' . $config['user'] . ';';
+        // create quary string with the help of the array by using http_build_query function
+        $dns = 'mysql:' . http_build_query($config, '', ';');
+
+        $this->connection = new PDO($dns,$user,$password,[
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // this set the default fetch mode to associative array
+        ]); // this create a pdo connection to the database and store it in the connection property
     }
     public function quary($quary)
     {
