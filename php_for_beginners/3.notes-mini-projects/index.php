@@ -12,9 +12,7 @@ require 'router.php';
 // $uri = $_SERVER['REQUEST_URI'];
 // let's connect database with our project
 
-$db = new Database($config['database']);
-$users = $db->query('select * from users')->fetchAll();
 
-foreach ($users as $user) {
-    echo '<li>' . $user['name']. '</li>';
-}
+
+
+

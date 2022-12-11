@@ -11,14 +11,17 @@
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <!-- Replace with your content -->
       <div class="px-4 py-6 sm:px-0">
-        <?php foreach ($notes as $note) : ?>
-            <li>
+       
+            <p class="mb-10">
+             <!-- create a link which go back to the notes page -->
+              <a href="/laravel_with_laracast/php_for_beginners/3.notes-mini-projects/notes" class="text-2xl text-blue-500">Go back to notes</a>
+            </p>
               <!-- create a ankor tag with proper styling -->
-              <a href="note?id=<?= $note['id']; ?>" class="text-2xl text-blue-500">
-                <p><?= $note['notes_body']; ?></p>
-                </a>
-            </li>
-        <?php endforeach; ?>
+              
+                <p><?= $note['notes_body'] ?></p>
+                
+            
+        
       </div>
       <!-- /End replace -->
     </div>
