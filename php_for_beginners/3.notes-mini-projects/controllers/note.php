@@ -17,3 +17,4 @@
         abort(Response::HTTP_FORBIDDEN);
     }
     require 'views/note.view.php';
+    // authenication
