@@ -18,7 +18,7 @@ class Database
         $dns = 'mysql:' . http_build_query($config, '', ';');
 
         $this->connection = new PDO($dns,$user,$password,[
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // this set the default fetch mode to associative array
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // this set the default fetch mode to associative array it's applied each and every time we fetch data from the database. each and every query we execute
         ]); // this create a pdo connection to the database and store it in the connection property
     }
     public function quary($quary,$parms=[])
