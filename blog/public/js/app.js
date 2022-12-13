@@ -1,0 +1,1 @@
+alert('This is alert from app.js which is in public/js folder')
